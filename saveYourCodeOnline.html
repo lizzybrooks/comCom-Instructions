@@ -9,6 +9,15 @@
             font-family: Arial, sans-serif;
             margin: 40px;
         }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
         code {
             background-color: #f4f4f4;
             padding: 2px 4px;
@@ -21,55 +30,72 @@
             padding: 10px;
             overflow-x: auto;
         }
-        h1, h2 {
-            color: #333;
-        }
-        p, li {
-            line-height: 1.6;
+        img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
 <body>
     <h1>Creating a GitHub Repository for Node Projects</h1>
-    <p>Creating a GitHub repository for a project with many node modules installed doesn't have to be complicated. Here’s an easy way to set up your GitHub repository:</p>
-    <ol>
-        <li>
-            <h2>Initialize your project</h2>
-            <p>Ensure your project is initialized as a Git repository. If not, navigate to your project's root directory in the terminal and run:</p>
-            <pre><code>git init</code></pre>
-        </li>
-        <li>
-            <h2>Create <code>.gitignore</code> file</h2>
-            <p>To avoid uploading the <code>node_modules</code> directory to GitHub, you need a <code>.gitignore</code> file at the root of your project. Add the following line:</p>
-            <pre><code>node_modules/</code></pre>
-        </li>
-        <li>
-            <h2>Add your project files to the repository</h2>
-            <p>Add the files you want to track to the repository, and then commit them:</p>
-            <pre><code>git add .
+    <table>
+        <tr>
+            <td>
+                <h2>Initialize your project</h2>
+                <p>Navigate to your project's root directory and run:</p>
+                <pre><code>git init</code></pre>
+            </td>
+            <td><img src="placeholder_for_init_project.gif" alt="Initializing Git"></td>
+        </tr>
+        <tr>
+            <td>
+                <h2>Create .gitignore file</h2>
+                <p>Add <code>node_modules/</code> to your .gitignore file to exclude it from Git tracking.</p>
+                <pre><code>node_modules/</code></pre>
+            </td>
+            <td><img src="placeholder_for_gitignore.gif" alt="Creating .gitignore"></td>
+        </tr>
+        <tr>
+            <td>
+                <h2>Add your project files to the repository</h2>
+                <p>Add and commit your files to Git:</p>
+                <pre><code>git add .
 git commit -m "Initial commit"</code></pre>
-        </li>
-        <li>
-            <h2>Create a repository on GitHub</h2>
-            <p>Go to GitHub and create a new repository. Fill out the form with your repository details.</p>
-        </li>
-        <li>
-            <h2>Link your local repository to GitHub</h2>
-            <p>Follow the instructions provided by GitHub to push an existing repository from the command line.</p>
-            <pre><code>git remote add origin &lt;REPOSITORY_URL&gt;
+            </td>
+            <td><img src="placeholder_for_add_commit.gif" alt="Adding and committing files"></td>
+        </tr>
+        <tr>
+            <td>
+                <h2>Create a repository on GitHub</h2>
+                <p>Create a new repository on GitHub via the website.</p>
+            </td>
+            <td><img src="placeholder_for_create_repo.gif" alt="Creating GitHub repository"></td>
+        </tr>
+        <tr>
+            <td>
+                <h2>Link your local repository to GitHub</h2>
+                <p>Link your local repository with the GitHub repository:</p>
+                <pre><code>git remote add origin &lt;REPOSITORY_URL&gt;
 git branch -M main
 git push -u origin main</code></pre>
-        </li>
-        <li>
-            <h2>Push your local commits to the GitHub repository</h2>
-            <pre><code>git push -u origin main</code></pre>
-        </li>
-        <li>
-            <h2>Install node modules</h2>
-            <p>Whenever someone clones your project, they can install all the dependencies by running:</p>
-            <pre><code>npm install</code></pre>
-        </li>
-    </ol>
-    <p>By following these steps, you can easily create a GitHub repository for your project without including the <code>node_modules</code> directory, keeping your repository clean and lightweight.</p>
+            </td>
+            <td><img src="placeholder_for_link_repo.gif" alt="Linking repository"></td>
+        </tr>
+        <tr>
+            <td>
+                <h2>Push your local commits to the GitHub repository</h2>
+                <pre><code>git push -u origin main</code></pre>
+            </td>
+            <td><img src="placeholder_for_push_commits.gif" alt="Pushing commits"></td>
+        </tr>
+        <tr>
+            <td>
+                <h2>Install node modules</h2>
+                <p>Run <code>npm install</code> to install dependencies after cloning the project.</p>
+                <pre><code>npm install</code></pre>
+            </td>
+            <td><img src="placeholder_for_npm_install.gif" alt="Installing node modules"></td>
+        </tr>
+    </table>
 </body>
 </html>
