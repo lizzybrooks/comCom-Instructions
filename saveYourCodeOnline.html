@@ -20,7 +20,7 @@
         }
         code {
             background-color: #f4f4f4;
-            padding: 2px 4px;
+            padding: 4px 4px;
             border-radius: 4px;
             font-family: monospace;
         }
@@ -51,7 +51,9 @@
         <tr>
             <td>
                 <h2>Create .gitignore file</h2>
-                <p> A .gitignore file is literally a file that tells the git process which files in your project it should ignore, or not upload to Github. We want to ignore the node files because they're huge and there are too many of them to store online, and also because it's redundant to store them online. Anyone who wants to open the project will use your package.json file to install these additional libraries (called dependencies) on their own computer. In VSCode, create a new file and put the below text into it. Then save it. Add <code>node_modules/</code> to your .gitignore file to exclude it from Git tracking.</p>
+                <p> A .gitignore file is literally a file that tells the git process which files in your project it should ignore, or not upload to Github. We want to ignore the node files because they're huge and there are too many of them to store online, and also because it's redundant to store them online. Anyone who wants to open the project will use your package.json file to install these additional libraries (called dependencies) on their own computer.</p> 
+                <br>
+                <p> In VSCode, create a new file, call it .gitignore and put the below text into it. Then save it. </p>
                 <pre><code>node_modules/</code></pre>
             </td>
             <td><img src="placeholder_for_gitignore.gif" alt="Creating .gitignore"></td>
