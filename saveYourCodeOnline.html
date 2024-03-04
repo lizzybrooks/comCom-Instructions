@@ -38,11 +38,12 @@
 </head>
 <body>
     <h1>Creating a GitHub Repository for Node Projects</h1>
+    <h2>Git is a version control system that allows you to save changes to your code without losing previous drafts. Github is an online storage place for code that uses the git system. Using this system, you can work on a project and keep track of your changes. It takes a minute to set up, but it's worth it. </h2>
     <table>
         <tr>
             <td>
                 <h2>Initialize your project</h2>
-                <p>Navigate to your project's root directory and run:</p>
+                <p>Open Terminal (mac) or the command prompt (windows). Navigate to your project's root directory (if you open your terminal through VSCode, you'll already be in your project's root directory). Type the following command (or copy and paste it) to initialize the git process inside this project </p>
                 <pre><code>git init</code></pre>
             </td>
             <td><img src="placeholder_for_init_project.gif" alt="Initializing Git"></td>
@@ -50,7 +51,7 @@
         <tr>
             <td>
                 <h2>Create .gitignore file</h2>
-                <p>Add <code>node_modules/</code> to your .gitignore file to exclude it from Git tracking.</p>
+                <p> A .gitignore file is literally a file that tells the git process which files in your project it should ignore, or not upload to Github. We want to ignore the node files because they're huge and there are too many of them to store online, and also because it's redundant to store them online. Anyone who wants to open the project will use your package.json file to install these additional libraries (called dependencies) on their own computer. In VSCode, create a new file and put the below text into it. Then save it. Add <code>node_modules/</code> to your .gitignore file to exclude it from Git tracking.</p>
                 <pre><code>node_modules/</code></pre>
             </td>
             <td><img src="placeholder_for_gitignore.gif" alt="Creating .gitignore"></td>
@@ -58,7 +59,7 @@
         <tr>
             <td>
                 <h2>Add your project files to the repository</h2>
-                <p>Add and commit your files to Git:</p>
+                <p>Run this series of commands in your terminal window to add and commit your files to Git:</p>
                 <pre><code>git add .
 git commit -m "Initial commit"</code></pre>
             </td>
@@ -67,14 +68,14 @@ git commit -m "Initial commit"</code></pre>
         <tr>
             <td>
                 <h2>Create a repository on GitHub</h2>
-                <p>Create a new repository on GitHub via the website.</p>
+                <p>Create a new repository on GitHub via the website. Go to Github.com, log in and go to the + --> new repository place menu on the upper right. Name your repository whatever you want. Don't do any of the setup on the website. You are doing this process on your local computer, using terminal or command prompt. </p>
             </td>
             <td><img src="placeholder_for_create_repo.gif" alt="Creating GitHub repository"></td>
         </tr>
         <tr>
             <td>
                 <h2>Link your local repository to GitHub</h2>
-                <p>Link your local repository with the GitHub repository:</p>
+                <p>Run the following code to link your local repository with the GitHub repository: (replace the dummy text with your actual URL for your repository, copied and pasted from the url bar at the top of the browser).</p>
                 <pre><code>git remote add origin &lt;REPOSITORY_URL&gt;
 git branch -M main
 git push -u origin main</code></pre>
@@ -83,16 +84,15 @@ git push -u origin main</code></pre>
         </tr>
         <tr>
             <td>
-                <h2>Push your local commits to the GitHub repository</h2>
+                <h2>Run the following script to push your local commits to the GitHub repository. This means that you will push or upload your files into the online storage space, GitHub. </h2>
                 <pre><code>git push -u origin main</code></pre>
             </td>
             <td><img src="placeholder_for_push_commits.gif" alt="Pushing commits"></td>
         </tr>
         <tr>
             <td>
-                <h2>Install node modules</h2>
-                <p>Run <code>npm install</code> to install dependencies after cloning the project.</p>
-                <pre><code>npm install</code></pre>
+                <h2>Click in the code tab in your repository to make sure the files are there.</h2>
+                
             </td>
             <td><img src="placeholder_for_npm_install.gif" alt="Installing node modules"></td>
         </tr>
