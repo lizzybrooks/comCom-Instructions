@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Scanner and Reactor</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h2 { color: #2A52BE; }
+        pre { background-color: #f4f4f4; padding: 10px; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <h1>Interactive QR Code Scanner and Reactor with p5.js</h1>
+    <p>This project demonstrates how to use p5.js and jsQR to scan QR codes from a webcam feed and react to specific codes by drawing a star on the canvas.</p>
+
+    <h2>Setup Function</h2>
+    <p>This function initializes the canvas and sets up the video capture from the webcam. It also hides the video element so that only the canvas is visible.</p>
+    <pre>function setup() {
+  canvas = createCanvas(640, 480);
+  canvas.id('p5canvas');
+  pixelDensity(1);
+  video = createCapture(VIDEO);
+  video.size(width, height);
+  video.hide();
+  context = canvas.elt.getContext('2d');
+}</pre>
+
+    <h2>Draw Function</h2>
+    <p>The draw function continuously updates the canvas, showing the webcam feed and scanning for QR codes each frame.</p>
+    <pre>function draw() {
+  image(video, 0, 0, width, height);
+  scanAndReact();
+}</pre>
+
+    <h2>Scan and React Function</h2>
+    <p>This function grabs the current video frame, scans for QR codes, and checks if a specific code content is detected. If the target QR code is detected, it calls the drawStar function.</p>
+    <pre>function scanAndReact() {
+  context.drawImage(video.elt, 0, 0, width, height);
+  let imageData = context.getImageData(0, 0, width, height);
+  let code = jsQR(imageData.data, imageData.width, imageData.height);
+  if (code && code.data === targetQRCode) {
+    drawStar(width / 2, height / 2, 30, 70, 5);
+    noLoop();
+  }
+}</pre>
+
+    <h2>Draw Star Function</h2>
+    <p>This function draws a star based on the parameters provided. It uses basic trigonometry to calculate the vertices of the star and draws them on the canvas.</p>
+    <pre>function drawStar(x, y, radius1, radius2, npoints) {
+  let angle = TWO_PI / npoints;
+  let halfAngle = angle / 2.0;
+  beginShape();
+  for (let i = 0; i < TWO_PI; i += angle) {
+    let sx = x + cos(i) * radius2;
+    let sy = y + sin(i) * radius2;
+    vertex(sx, sy);
+    sx = x + cos(i + halfAngle) * radius1;
+    sy = y + sin(i + halfAngle) * radius1;
+    vertex(sx, sy);
+  }
+  endShape(CLOSE);
+}</pre>
+
+    <script>
+        // p5.js and jsQR script will go here
+    </script>
+</body>
+</html>
